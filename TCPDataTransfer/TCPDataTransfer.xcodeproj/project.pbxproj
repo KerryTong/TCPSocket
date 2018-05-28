@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18771C9820B92E5E000DA542 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771C9720B92E5E000DA542 /* AppDelegate.m */; };
+		18771C9B20B92E5E000DA542 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771C9A20B92E5E000DA542 /* main.m */; };
+		18771C9E20B92E5E000DA542 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771C9D20B92E5E000DA542 /* ViewController.m */; };
+		18771CA020B92E5E000DA542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18771C9F20B92E5E000DA542 /* Assets.xcassets */; };
+		18771CA320B92E5E000DA542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18771CA120B92E5E000DA542 /* Main.storyboard */; };
+		18771CAC20B93032000DA542 /* GUIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771CAB20B93032000DA542 /* GUIHandler.m */; };
+		18771CAF20B932EA000DA542 /* ServerThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771CAE20B932EA000DA542 /* ServerThread.m */; };
+		18771CB220B93317000DA542 /* ClientThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 18771CB120B93317000DA542 /* ClientThread.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18771C9320B92E5E000DA542 /* TCPDataTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCPDataTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18771C9620B92E5E000DA542 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18771C9720B92E5E000DA542 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18771C9A20B92E5E000DA542 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18771C9C20B92E5E000DA542 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18771C9D20B92E5E000DA542 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18771C9F20B92E5E000DA542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18771CA220B92E5E000DA542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18771CA420B92E5E000DA542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18771CAA20B93032000DA542 /* GUIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIHandler.h; sourceTree = "<group>"; };
+		18771CAB20B93032000DA542 /* GUIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIHandler.m; sourceTree = "<group>"; };
+		18771CAD20B932EA000DA542 /* ServerThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerThread.h; sourceTree = "<group>"; };
+		18771CAE20B932EA000DA542 /* ServerThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerThread.m; sourceTree = "<group>"; };
+		18771CB020B93317000DA542 /* ClientThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientThread.h; sourceTree = "<group>"; };
+		18771CB120B93317000DA542 /* ClientThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientThread.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18771C9020B92E5E000DA542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18771C8A20B92E5E000DA542 = {
+			isa = PBXGroup;
+			children = (
+				18771C9520B92E5E000DA542 /* TCPDataTransfer */,
+				18771C9420B92E5E000DA542 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18771C9420B92E5E000DA542 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18771C9320B92E5E000DA542 /* TCPDataTransfer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18771C9520B92E5E000DA542 /* TCPDataTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				18771C9620B92E5E000DA542 /* AppDelegate.h */,
+				18771C9720B92E5E000DA542 /* AppDelegate.m */,
+				18771C9C20B92E5E000DA542 /* ViewController.h */,
+				18771C9D20B92E5E000DA542 /* ViewController.m */,
+				18771C9F20B92E5E000DA542 /* Assets.xcassets */,
+				18771CA120B92E5E000DA542 /* Main.storyboard */,
+				18771CA420B92E5E000DA542 /* Info.plist */,
+				18771C9920B92E5E000DA542 /* Supporting Files */,
+				18771CAA20B93032000DA542 /* GUIHandler.h */,
+				18771CAB20B93032000DA542 /* GUIHandler.m */,
+				18771CAD20B932EA000DA542 /* ServerThread.h */,
+				18771CAE20B932EA000DA542 /* ServerThread.m */,
+				18771CB020B93317000DA542 /* ClientThread.h */,
+				18771CB120B93317000DA542 /* ClientThread.m */,
+			);
+			path = TCPDataTransfer;
+			sourceTree = "<group>";
+		};
+		18771C9920B92E5E000DA542 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18771C9A20B92E5E000DA542 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18771C9220B92E5E000DA542 /* TCPDataTransfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18771CA720B92E5E000DA542 /* Build configuration list for PBXNativeTarget "TCPDataTransfer" */;
+			buildPhases = (
+				18771C8F20B92E5E000DA542 /* Sources */,
+				18771C9020B92E5E000DA542 /* Frameworks */,
+				18771C9120B92E5E000DA542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TCPDataTransfer;
+			productName = TCPDataTransfer;
+			productReference = 18771C9320B92E5E000DA542 /* TCPDataTransfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18771C8B20B92E5E000DA542 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = TW;
+				TargetAttributes = {
+					18771C9220B92E5E000DA542 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 18771C8E20B92E5E000DA542 /* Build configuration list for PBXProject "TCPDataTransfer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18771C8A20B92E5E000DA542;
+			productRefGroup = 18771C9420B92E5E000DA542 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18771C9220B92E5E000DA542 /* TCPDataTransfer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18771C9120B92E5E000DA542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18771CA020B92E5E000DA542 /* Assets.xcassets in Resources */,
+				18771CA320B92E5E000DA542 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18771C8F20B92E5E000DA542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18771C9E20B92E5E000DA542 /* ViewController.m in Sources */,
+				18771C9B20B92E5E000DA542 /* main.m in Sources */,
+				18771CAC20B93032000DA542 /* GUIHandler.m in Sources */,
+				18771C9820B92E5E000DA542 /* AppDelegate.m in Sources */,
+				18771CB220B93317000DA542 /* ClientThread.m in Sources */,
+				18771CAF20B932EA000DA542 /* ServerThread.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18771CA120B92E5E000DA542 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18771CA220B92E5E000DA542 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18771CA520B92E5E000DA542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		18771CA620B92E5E000DA542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		18771CA820B92E5E000DA542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TCPDataTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cloudscreen.TCPDataTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18771CA920B92E5E000DA542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TCPDataTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cloudscreen.TCPDataTransfer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18771C8E20B92E5E000DA542 /* Build configuration list for PBXProject "TCPDataTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18771CA520B92E5E000DA542 /* Debug */,
+				18771CA620B92E5E000DA542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18771CA720B92E5E000DA542 /* Build configuration list for PBXNativeTarget "TCPDataTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18771CA820B92E5E000DA542 /* Debug */,
+				18771CA920B92E5E000DA542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18771C8B20B92E5E000DA542 /* Project object */;
+}
