@@ -12,15 +12,31 @@
 
 - (void)initialClinet {
     CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL};
-    obj_client = CFSocketCreate(kCFAllocatorDefault, AF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketConnectCallBack, TCPClientCallBackHandler, &sctx);
-    struct sockaddr_in sock_addr;
+    // 创建socket
+    obj_client = CFSocketCreate(kCFAllocatorDefault, // 为对象分配内存 可为nil
+                                AF_INET, // 协议族 0或负数  默认为 PF_INET
+                                SOCK_STREAM, // 套接字类型，协议族为 PF_INET 默认
+                                IPPROTO_TCP, // 套接字协议
+                                kCFSocketConnectCallBack, // 触发回调消息类型
+                                TCPClientCallBackHandler, // 回调函数
+                                &sctx); // 一个持有CFSocket结构消息的对象， 可以为nil
+    
+    // 配置服务器地址
+    struct sockaddr_in sock_addr; // IPV4
+    
     memset(&sock_addr, 0, sizeof(sock_addr));
+    
     sock_addr.sin_len = sizeof(sock_addr);
-    sock_addr.sin_family = AF_INET;
-    sock_addr.sin_port = htons(6650);
-    inet_pton(AF_INET, "127.0.0.1", &sock_addr.sin_addr);
-    CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&sock_addr, sizeof(sock_addr));
-    CFSocketConnectToAddress(obj_client, dref, -1);
+    
+    sock_addr.sin_family = AF_INET; // 协议族
+    sock_addr.sin_port = htons(9527); // 端口
+    inet_pton(AF_INET, "127.0.0.1", &sock_addr.sin_addr); // 把字符串的地址转为机器可识别的网络地址
+    
+    CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&sock_addr, sizeof(sock_addr)); // 绑定socket
+    
+    CFSocketConnectToAddress(obj_client, dref, -1); // 链接超时时间，如果为负，则不尝试链接，而是把链接放到后台进行，如果obj_client 消息类型为 kCFSocketConnectCallBack ,将会在链接成功或者失败的时候在后台触发回调函数
+    
+    // 释放dref
     CFRelease(dref);
     
 }
@@ -97,7 +113,7 @@
     return data_buff;
 }
 
-
+// socket 回调函数 ，函数格式克制socket创建函数里查看
 void TCPClientCallBackHandler(CFSocketRef s, CFSocketCallBackType callbacktype, CFDataRef address, const void *data, void *info) {
     switch (callbacktype) {
         case kCFSocketConnectCallBack:

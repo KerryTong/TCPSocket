@@ -11,6 +11,7 @@
 @implementation ServerThread
 
 - (void)initializeServer:(NSTextField *)target_text_field {
+    
     tx_recv = target_text_field;
     CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL};
     obj_server = CFSocketCreate(kCFAllocatorDefault, AF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, TCPServerCallBackHandler, &sctx);
@@ -22,7 +23,7 @@
     memset(&sock_addr, 0, sizeof(sock_addr));
     sock_addr.sin_len = sizeof(sock_addr);
     sock_addr.sin_family = AF_INET;
-    sock_addr.sin_port = htons(6650);
+    sock_addr.sin_port = htons(9527);
     sock_addr.sin_addr.s_addr = INADDR_ANY;
     
     CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8*)&sock_addr, sizeof(sock_addr));
