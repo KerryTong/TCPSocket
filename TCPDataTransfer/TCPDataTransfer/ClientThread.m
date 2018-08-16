@@ -29,7 +29,7 @@
     sock_addr.sin_len = sizeof(sock_addr);
     
     sock_addr.sin_family = AF_INET; // 协议族
-    sock_addr.sin_port = htons(9527); // 端口
+    sock_addr.sin_port = htons(6658); // 端口
     inet_pton(AF_INET, "127.0.0.1", &sock_addr.sin_addr); // 把字符串的地址转为机器可识别的网络地址
     
     CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&sock_addr, sizeof(sock_addr)); // 绑定socket
@@ -134,8 +134,10 @@ void TCPClientCallBackHandler(CFSocketRef s, CFSocketCallBackType callbacktype, 
                     ClientThread *obj_client_ptr = (__bridge ClientThread*)info;
                     char * recv_data = [obj_client_ptr ReadData];
                     NSLog(@"%s", recv_data);
-                    // 这里非常危险 在xcode9会报错
-//                    [obj_client_ptr ->tx_recv setStringValue:[NSString stringWithUTF8String:recv_data]];
+                    
+                    // 这里非常危险 在xcode9会报错 这是现实server返回的数据
+                    [obj_client_ptr ->tx_recv setStringValue:[NSString stringWithUTF8String:recv_data]];
+                    
                     free(recv_data);
                 }
             }
@@ -144,28 +146,6 @@ void TCPClientCallBackHandler(CFSocketRef s, CFSocketCallBackType callbacktype, 
             break;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end

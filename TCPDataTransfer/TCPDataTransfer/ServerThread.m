@@ -4,7 +4,10 @@
 //
 //  Created by 仝兴伟 on 2018/5/26.
 //  Copyright © 2018年 TW. All rights reserved.
-//
+//  https://www.youtube.com/watch?v=pDK3zFQqc5E&list=PLtBSL3_Le8pNkcH4TjkrAdppQGaBMmQSM
+//  列表
+//  https://www.youtube.com/watch?v=lPD5TY9D-Ig
+//  整合
 
 #import "ServerThread.h"
 #import "ClientThread.h"
@@ -19,11 +22,12 @@
     int so_reuse_flag = 1;
     setsockopt(CFSocketGetNative(obj_server), SOL_SOCKET,SO_REUSEADDR, &so_reuse_flag, sizeof(so_reuse_flag));
     setsockopt(CFSocketGetNative(obj_server), SOL_SOCKET,SO_REUSEPORT, &so_reuse_flag, sizeof(so_reuse_flag));
+    
     struct sockaddr_in sock_addr;
     memset(&sock_addr, 0, sizeof(sock_addr));
     sock_addr.sin_len = sizeof(sock_addr);
     sock_addr.sin_family = AF_INET;
-    sock_addr.sin_port = htons(9527);
+    sock_addr.sin_port = htons(6658);
     sock_addr.sin_addr.s_addr = INADDR_ANY;
     
     CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8*)&sock_addr, sizeof(sock_addr));
@@ -62,38 +66,6 @@ void TCPServerCallBackHandler(CFSocketRef s, CFSocketCallBackType callbacktype, 
             break;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
