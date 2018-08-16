@@ -10,6 +10,7 @@
 
 @implementation GUIHandler
 
+// 初始化server
 - (IBAction)StartServerNow:(id)sender {
     obj_server_thread  = [[ServerThread alloc]init];
     [obj_server_thread initializeServer:tx_recv_data];
@@ -21,6 +22,7 @@
     [obj_server_thread cancel];
 }
 
+// 初始化client
 - (IBAction)ConnectToServerNow:(id)sender {
     obj_client_thread = [[ClientThread alloc]init];
     [obj_client_thread initialClinet];
@@ -31,6 +33,7 @@
     [obj_client_thread DisconnectFromServer];
     [obj_client_thread cancel];
 }
+
 
 - (IBAction)SenderDataToServer:(id)sender {
     [obj_client_thread sendtcpDataPacker:[[tx_send_data stringValue]UTF8String]];

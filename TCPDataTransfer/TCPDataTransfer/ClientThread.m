@@ -11,8 +11,8 @@
 @implementation ClientThread
 
 - (void)initialClinet {
-    CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL};
-    // 创建socket
+    CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL}; // 创建socket
+    
     obj_client = CFSocketCreate(kCFAllocatorDefault, // 为对象分配内存 可为nil
                                 AF_INET, // 协议族 0或负数  默认为 PF_INET
                                 SOCK_STREAM, // 套接字类型，协议族为 PF_INET 默认
@@ -29,7 +29,9 @@
     sock_addr.sin_len = sizeof(sock_addr);
     
     sock_addr.sin_family = AF_INET; // 协议族
+    
     sock_addr.sin_port = htons(6658); // 端口
+    
     inet_pton(AF_INET, "127.0.0.1", &sock_addr.sin_addr); // 把字符串的地址转为机器可识别的网络地址
     
     CFDataRef dref = CFDataCreate(kCFAllocatorDefault, (UInt8 *)&sock_addr, sizeof(sock_addr)); // 绑定socket
@@ -40,6 +42,12 @@
     CFRelease(dref);
     
 }
+
+
+/**
+ main
+     CFRunLoop
+ */
 - (void)main {
     CFRunLoopSourceRef loopref = CFSocketCreateRunLoopSource(kCFAllocatorDefault, obj_client, 0);
     CFRunLoopAddSource(CFRunLoopGetCurrent(), loopref, kCFRunLoopDefaultMode);
@@ -47,12 +55,23 @@
     CFRunLoopRun();
 }
 
+
+/**
+ DisconnectFromServer
+ */
 - (void)DisconnectFromServer {
     CFSocketInvalidate(obj_client);
     CFRelease(obj_client);
     CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
+
+
+/**
+ 客户端发送data
+
+ @param data data
+ */
 - (void)sendtcpDataPacker:(const char*)data {
     int initialize[1] = {2}; // initialize
     int separator[1] = {4};
@@ -78,12 +97,14 @@
     memcpy(&packet[0 + 1 + ele_count+1], data, strlen(data));
     CFDataRef dref = CFDataCreate(kCFAllocatorDefault, packet, packet_length);
     
+    // 发送客户端data
     CFSocketSendData(obj_client, NULL, dref, -1);
     free(packet);
     free(size_buff);
     free(data_length_char);
     CFRelease(dref);
 }
+
 
 - (void)initizeNative:(CFSocketNativeHandle)native_socket showRecData:(NSTextField *)targer_text_field{
     tx_recv = targer_text_field;
@@ -92,6 +113,12 @@
     
 }
 
+
+/**
+ 读取返回的data
+
+ @return data
+ */
 - (char *)ReadData {
     char *data_buff;
     NSMutableString *buff_length = [[NSMutableString alloc]init];
@@ -121,17 +148,20 @@ void TCPClientCallBackHandler(CFSocketRef s, CFSocketCallBackType callbacktype, 
                 CFSocketInvalidate(s);
                 CFRelease(s);
                 CFRunLoopStop(CFRunLoopGetCurrent());
+                NSLog(@"client to server error");
             } else {
-                NSLog(@"client to server ");
+                NSLog(@"client to server success");
             }
             break;
             
             case kCFSocketReadCallBack:
             {
+                // 获取返回数据
                 char buf[1];
                 read(CFSocketGetNative(s), &buf, 1);
                 if ((int)*buf == 2) {
                     ClientThread *obj_client_ptr = (__bridge ClientThread*)info;
+                    // 读取server返回的data
                     char * recv_data = [obj_client_ptr ReadData];
                     NSLog(@"%s", recv_data);
                     

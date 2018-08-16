@@ -18,13 +18,36 @@
     NSTextField *tx_recv;
 }
 
+
+/**
+ 初始化客户端
+ */
 - (void)initialClinet;
+
+
 - (void)initizeNative:(CFSocketNativeHandle)native_socket showRecData:(NSTextField *)targer_text_field;
 
 - (void)main;
 
+
+/**
+ DisconnectFromServer
+ */
 - (void)DisconnectFromServer;
+
+
+/**
+ 从clinet发送 data 内容
+
+ @param data data
+ */
 - (void)sendtcpDataPacker:(const char*)data;
 
+
+/**
+ 读取server data
+
+ @return data
+ */
 - (char *)ReadData;
 @end

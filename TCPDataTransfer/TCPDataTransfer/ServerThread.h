@@ -19,7 +19,9 @@
 
 }
 
+
 - (void)initializeServer:(NSTextField *)target_text_field;
+
 - (void)main;
 
 - (void)StopServer;
