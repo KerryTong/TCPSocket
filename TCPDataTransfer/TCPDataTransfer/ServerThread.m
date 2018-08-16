@@ -17,7 +17,12 @@
     
     tx_recv = target_text_field;
     CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL};
-    obj_server = CFSocketCreate(kCFAllocatorDefault, AF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, TCPServerCallBackHandler, &sctx);
+    obj_server = CFSocketCreate(kCFAllocatorDefault,
+                                AF_INET, SOCK_STREAM,
+                                IPPROTO_TCP,
+                                kCFSocketAcceptCallBack,
+                                TCPServerCallBackHandler,
+                                &sctx);
     
     int so_reuse_flag = 1;
     setsockopt(CFSocketGetNative(obj_server), SOL_SOCKET,SO_REUSEADDR, &so_reuse_flag, sizeof(so_reuse_flag));
