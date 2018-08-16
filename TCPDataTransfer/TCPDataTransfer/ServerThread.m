@@ -17,12 +17,14 @@
     
     tx_recv = target_text_field;
     CFSocketContext sctx = {0,(__bridge void *)(self),NULL,NULL,NULL};
-    obj_server = CFSocketCreate(kCFAllocatorDefault,
-                                AF_INET, SOCK_STREAM,
-                                IPPROTO_TCP,
-                                kCFSocketAcceptCallBack,
-                                TCPServerCallBackHandler,
-                                &sctx);
+    
+    obj_server = CFSocketCreate(kCFAllocatorDefault, // 为对象分配内存 可为nil
+                                AF_INET, // 协议族 0或负数  默认为 PF_INET
+                                SOCK_STREAM, // 套接字类型，协议族为 PF_INET 默认
+                                IPPROTO_TCP, // 套接字协议
+                                kCFSocketAcceptCallBack, // 触发回调消息类型
+                                TCPServerCallBackHandler, // 回调函数
+                                &sctx); // 一个持有CFSocket结构消息的对象， 可以为nil
     
     int so_reuse_flag = 1;
     setsockopt(CFSocketGetNative(obj_server), SOL_SOCKET,SO_REUSEADDR, &so_reuse_flag, sizeof(so_reuse_flag));
